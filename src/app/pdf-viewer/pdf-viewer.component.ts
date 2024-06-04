@@ -18,7 +18,7 @@ import {
 import { from, fromEvent, Subject } from 'rxjs';
 import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import * as PDFJS from 'pdfjs-dist';
-import * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer';
+import * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer.mjs';
 
 import { createEventBus } from '../utils/event-bus-utils';
 import { assign, isSSR } from '../utils/helpers';
@@ -32,7 +32,7 @@ import type {
   PDFViewerOptions,
   ZoomScale
 } from './typings';
-import { PDFSinglePageViewer } from 'pdfjs-dist/web/pdf_viewer';
+import { PDFSinglePageViewer } from 'pdfjs-dist/web/pdf_viewer.mjs';
 
 if (!isSSR()) {
   assign(PDFJS, 'verbosity', PDFJS.VerbosityLevel.INFOS);
